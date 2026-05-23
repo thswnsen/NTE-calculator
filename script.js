@@ -217,9 +217,11 @@ function applyArcPreset() {
     const pack = fullArcData[currentArc];
     if (!pack) return;
     const row = pack[`믹싱레벨${currentArcTier}`] || pack[currentArcTier];
+    const baseOptionText = pack[`기본`][17] || pack[currentArcTier];
     if (row) {
         document.getElementById('ui-arc-base-atk').value = parseRowFloat(row, 2);
         document.getElementById('display-arc-name').textContent = currentArc;
+        document.getElementById('display-arc-base-opt').textContent = baseOptionText[17];
         document.getElementById('display-arc-desc').innerText = parseRowString(row, 17);
     }
     calculate();

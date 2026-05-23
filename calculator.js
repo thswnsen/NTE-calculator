@@ -4,7 +4,7 @@ function calculate() {
 
     const pack = fullCharData[currentCharacter];
     const baseRow = pack[currentCharacter];
-    
+
     // 1. 초기값 세팅 (캐릭터 기본)
     const ctx = initCtx(baseRow);
 
@@ -33,8 +33,14 @@ function initCtx(baseRow) {
 function accumulateGear(ctx, pack) {
     const arcPack = fullArcData[currentArc];
     if (arcPack) {
+
+        //아크 기본옵션 추가
+        const b = arcPack[`기본`] || arcPack[currentArcTier];
+        if (b) accumulateStats(ctx, b);
+
         const r = arcPack[`믹싱레벨${currentArcTier}`] || arcPack[currentArcTier];
-        if (r) accumulateStats(ctx, r);
+        const isEnabled = document.getElementById('switch-arc-option')?.checked;
+        if (r&&isEnabled) accumulateStats(ctx, r);
     }
     const addStat = (rowKey) => { const r = pack[rowKey]; if (r) accumulateStats(ctx, r); };
     activeAwakeNodes.forEach(n => addStat(`각성${n}`));
@@ -46,7 +52,7 @@ function accumulateConsole(ctx) {
     const conSetType = document.getElementById('console-set-select').value;
     const conPack = fullConsoleData[currentConsole];
     if (conPack && conPack[conSetType]) accumulateStats(ctx, conPack[conSetType]);
-    
+
     const addConsoleOpt = (type, name) => {
         if (name && fullConsoleData[type] && fullConsoleData[type][name]) {
             accumulateStats(ctx, fullConsoleData[type][name]);
