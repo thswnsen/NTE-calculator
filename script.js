@@ -221,7 +221,7 @@ function applyArcPreset() {
     if (row) {
         document.getElementById('ui-arc-base-atk').value = parseRowFloat(row, 2);
         document.getElementById('display-arc-name').textContent = currentArc;
-        document.getElementById('display-arc-base-opt').textContent = baseOptionText[17];
+        document.getElementById('display-arc-base-opt').textContent = baseOptionText;
         document.getElementById('display-arc-desc').innerText = parseRowString(row, 17);
     }
     calculate();

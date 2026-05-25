@@ -123,8 +123,10 @@ function accumulateExternalBuffs(ctx) {
     if (fullExternalBuffData['파티원']) {
         Object.keys(fullExternalBuffData['파티원']).forEach(name => {
             const checkbox = document.getElementById(`buff-party-${name}`);
+            console.log(fullExternalBuffData['파티원']);
             if (checkbox && checkbox.checked) {
                 const r = fullExternalBuffData['파티원'][name];
+                 
                 const customInput = document.getElementById(`input-buff-party-${name}`);
                 if (customInput) {
                     ctx.flatAtk += parseFloat(customInput.value !== "" ? customInput.value : customInput.placeholder);
@@ -134,4 +136,12 @@ function accumulateExternalBuffs(ctx) {
             }
         });
     }
+    //커스텀 버프
+    ctx.flatAtk += getUIVal('ui-custom-flat-atk');
+    ctx.atkP    += getUIVal('ui-custom-atk-p');
+    ctx.dmg     += getUIVal('ui-custom-dmg');
+    ctx.cr      += getUIVal('ui-custom-cr');
+    ctx.cd      += getUIVal('ui-custom-cd');
+
+
 }

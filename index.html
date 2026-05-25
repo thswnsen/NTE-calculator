@@ -429,6 +429,71 @@
                             </div>
                         </div>
                     </div>
+                    <div class="bg-zinc-950/20 rounded-xl border border-zinc-900/50 p-4 space-y-3 mt-4">
+                        <div class="flex items-center justify-between border-b border-zinc-900/80 pb-2">
+                            <span class="text-xs font-bold text-zinc-300 flex items-center gap-1.5">
+                                <i class="fa-solid fa-sliders text-[#deff9a]"></i> 커스텀 버프 입력
+                            </span>
+                            <span class="text-[10px] text-zinc-500">* 직접 원하는 버프 수치를 추가로 입력합니다.</span>
+                        </div>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3">
+                            <div
+                                class="bg-zinc-950/40 border border-zinc-800 rounded-lg p-2.5 flex flex-col justify-between gap-1">
+                                <label for="ui-custom-flat-atk" class="text-[11px] text-zinc-400 font-bold">고정
+                                    공격력</label>
+                                <div
+                                    class="flex items-center bg-zinc-950 px-2 py-1 rounded border border-zinc-800 focus-within:border-[#deff9a]/50 transition-colors">
+                                    <input type="number" id="ui-custom-flat-atk" oninput="calculate()" placeholder="0"
+                                        step="1"
+                                        class="w-full bg-transparent text-xs text-white text-right outline-none pr-1 font-mono">
+                                </div>
+                            </div>
+                            <div
+                                class="bg-zinc-950/40 border border-zinc-800 rounded-lg p-2.5 flex flex-col justify-between gap-1">
+                                <label for="ui-custom-atk-p" class="text-[11px] text-zinc-400 font-bold">공격력 %</label>
+                                <div
+                                    class="flex items-center bg-zinc-950 px-2 py-1 rounded border border-zinc-800 focus-within:border-[#deff9a]/50 transition-colors">
+                                    <input type="number" id="ui-custom-atk-p" oninput="calculate()" placeholder="0"
+                                        step="0.1"
+                                        class="w-full bg-transparent text-xs text-white text-right outline-none pr-1 font-mono">
+                                    <span class="text-[11px] text-zinc-500 font-mono">%</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-zinc-950/40 border border-zinc-800 rounded-lg p-2.5 flex flex-col justify-between gap-1">
+                                <label for="ui-custom-dmg" class="text-[11px] text-zinc-400 font-bold">피해 증가 %</label>
+                                <div
+                                    class="flex items-center bg-zinc-950 px-2 py-1 rounded border border-zinc-800 focus-within:border-[#deff9a]/50 transition-colors">
+                                    <input type="number" id="ui-custom-dmg" oninput="calculate()" placeholder="0"
+                                        step="0.1"
+                                        class="w-full bg-transparent text-xs text-white text-right outline-none pr-1 font-mono">
+                                    <span class="text-[11px] text-zinc-500 font-mono">%</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-zinc-950/40 border border-zinc-800 rounded-lg p-2.5 flex flex-col justify-between gap-1">
+                                <label for="ui-custom-cr" class="text-[11px] text-zinc-400 font-bold">치명타 확률 %</label>
+                                <div
+                                    class="flex items-center bg-zinc-950 px-2 py-1 rounded border border-zinc-800 focus-within:border-[#deff9a]/50 transition-colors">
+                                    <input type="number" id="ui-custom-cr" oninput="calculate()" placeholder="0"
+                                        step="0.1"
+                                        class="w-full bg-transparent text-xs text-white text-right outline-none pr-1 font-mono">
+                                    <span class="text-[11px] text-zinc-500 font-mono">%</span>
+                                </div>
+                            </div>
+                            <div
+                                class="bg-zinc-950/40 border border-zinc-800 rounded-lg p-2.5 flex flex-col justify-between gap-1 col-span-2 sm:col-span-1">
+                                <label for="ui-custom-cd" class="text-[11px] text-zinc-400 font-bold">치명타 피해 %</label>
+                                <div
+                                    class="flex items-center bg-zinc-950 px-2 py-1 rounded border border-zinc-800 focus-within:border-[#deff9a]/50 transition-colors">
+                                    <input type="number" id="ui-custom-cd" oninput="calculate()" placeholder="0"
+                                        step="0.1"
+                                        class="w-full bg-transparent text-xs text-white text-right outline-none pr-1 font-mono">
+                                    <span class="text-[11px] text-zinc-500 font-mono">%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
 
